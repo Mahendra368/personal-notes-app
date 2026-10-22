@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tagged Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>📝 Tagged Notes</h1>
+    <input id="search" type="search" placeholder="Search notes…" aria-label="Search notes" />
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Tags</h2>
+      <ul id="tagList" class="tag-list"></ul>
+    </aside>
+
+    <section class="content">
+      <form id="noteForm" class="card">
+        <input id="noteId" type="hidden" />
+        <input id="title" type="text" placeholder="Title" required maxlength="100" />
+        <textarea id="body" placeholder="Write your note…" rows="4" required></textarea>
+        <input id="tags" type="text" placeholder="Tags, comma separated (e.g. work, ideas)" />
+        <div class="actions">
+          <button type="submit" id="saveBtn">Add note</button>
+          <button type="button" id="cancelBtn" class="secondary" hidden>Cancel edit</button>
+        </div>
+      </form>
+
+      <p id="status" class="status" role="status"></p>
+      <div id="notes" class="notes"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
